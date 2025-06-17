@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create the remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
-        removeButton.className = 'remove-btn';
+        removeButton.classList.add('remove-btn'); // Correct way to assign class
 
-        // Add click event to remove the task
+        // Assign event to remove the task
         removeButton.onclick = function () {
             taskList.removeChild(li);
         };
 
-        // Append the button to the list item, then the item to the list
+        // Append the button to the list item, then append the item to the list
         li.appendChild(removeButton);
         taskList.appendChild(li);
 
@@ -47,7 +47,4 @@ document.addEventListener('DOMContentLoaded', function () {
             addTask();
         }
     });
-
-    // Optionally call addTask on load if needed, though the user is expected to input manually
-    // addTask(); // (Only required if pre-loading a task)
 });
